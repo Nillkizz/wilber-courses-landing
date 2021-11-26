@@ -1,0 +1,43 @@
+{
+  "name": "holst-na-zakaz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "build": "npx gulp build",
+    "serve": "npx gulp serve",
+    "clear": "npx gulp clear"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.27.5",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss-csso": "^5.0.1",
+    "postcss-import": "^14.0.2",
+    "sass": "^1.38.0",
+    "tailwindcss": "^2.2.7",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.3.1",
+    "image-compare-viewer": "^1.4.1",
+    "raleway-webfont": "^3.0.1",
+    "swiper": "^7.0.3",
+    "vanilla-lazyload": "^17.4.0"
+  }
+}

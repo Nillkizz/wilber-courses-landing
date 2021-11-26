@@ -1,0 +1,48 @@
+mixin block(key, marker=false)
+    - global.my_blocks = global.my_blocks || {}
+    if marker
+        if global.my_blocks[key]
+            - var temp = {}
+            - temp[key] = global.my_blocks[key]
+            - global.my_blocks[key] = null
+            - temp[key]()
+        else
+            block
+    else
+        - global.my_blocks[key] = this.block
+
+mixin wrapLink(link, prefix='', onlyBlock=false)
+    if prefix == 'tel:'
+        - var text = link
+        - var link = link.match(/\d/g).join('')
+    a(href= prefix+link)&attributes(attributes)
+        block
+        unless onlyBlock
+            |#[!= text || link]
+
+mixin icon( name )
+    - var is_sprite = name.startsWith('sprite-')
+    - var url = '/assets/img/icons/' + (is_sprite ? `sprite.svg#${name.replace('sprite-', '')}` : `${name}.svg`)
+    if (is_sprite)
+        svg.icon&attributes(attributes).fill-current
+            use(xlink:href=url)
+    else 
+        img(data-src=url).lazy.icon&attributes(attributes)
+
+
+mixin textBtn(text)
+    button.text-button&attributes(attributes)
+        span!= text
+        block
+
+mixin section(id, number, h2)
+    section(id=id)&attributes(attributes)
+        .title
+            if h2
+                h2!= h2
+            .section_number=number
+        .wrapper
+            block
+
+mixin angle_arrow(size='30px', border='1px solid')
+    div.angle-arrow(style={'--size': size, height: 'var(--size)', width:  'var(--size)', 'border-right': border, 'border-top': border })&attributes(attributes)

@@ -1,0 +1,23 @@
+@import main.css
+@import variables
+@import mixins
+@import templates
+@import components
+
+html, body
+  @apply overflow-x-hidden
+
+html
+  scroll-behavior: smooth
+  body
+    @apply min-h-screen flex flex-col text-16 lg_text-18 font-medium font-raleway text-color1
+    main
+      @apply flex-grow
+
+.stop-scrolling
+  @apply h-full overflow-hidden
+
+@import parts/header
+@import parts/footer
+
+@import pages/index
