@@ -21,28 +21,29 @@ mixin wrapLink(link, prefix='', onlyBlock=false)
             |#[!= text || link]
 
 mixin icon( name )
-    - var is_sprite = name.startsWith('sprite-')
+    - var is_sprite = name.startswith('sprite-')
     - var url = '/assets/img/icons/' + (is_sprite ? `sprite.svg#${name.replace('sprite-', '')}` : `${name}.svg`)
     if (is_sprite)
         svg.icon&attributes(attributes).fill-current
             use(xlink:href=url)
     else 
         img(data-src=url).lazy.icon&attributes(attributes)
+ 
+ 
+mixin image( filename )
+    - var is_sprite = filename.startsWith('sprite-')
+    - var url = '/assets/img/' + (is_sprite ? `sprite.svg#${filename.replace('sprite-', '')}` : `${filename}`)
+    if (is_sprite)
+        svg&attributes(attributes)
+            use(xlink:href=url)
+    else 
+        img(src=url)&attributes(attributes)
 
 
 mixin textBtn(text)
     button.text-button&attributes(attributes)
         span!= text
         block
-
-mixin section(id, number, h2)
-    section(id=id)&attributes(attributes)
-        .title
-            if h2
-                h2!= h2
-            .section_number=number
-        .wrapper
-            block
 
 mixin angle_arrow(size='30px', border='1px solid')
     div.angle-arrow(style={'--size': size, height: 'var(--size)', width:  'var(--size)', 'border-right': border, 'border-top': border })&attributes(attributes)

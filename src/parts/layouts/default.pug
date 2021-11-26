@@ -1,5 +1,5 @@
 include ../_data.pug
-include ../mixins.pug
+include ../_mixins.pug
 
 block variables
     - var TITLE = null
@@ -15,7 +15,6 @@ html(lang="ru")
             title= TITLE
             link(rel="stylesheet" href="/css/main.css")
     body(class=BODY_CLASSES)
-        include ../header.pug
         main
             block content
         include ../footer.pug
