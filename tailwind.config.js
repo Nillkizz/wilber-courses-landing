@@ -1,76 +1,64 @@
 module.exports = {
-  mode: 'jit',
-  separator: '_',
+  mode: "jit",
+  separator: "_",
   purge: {
-    content: [
-      './src/**/*.pug',
-      './src/**/*.{js,jsx,ts,tsx,vue}',
-    ],
+    content: ["./src/**/*.pug", "./src/**/*.{js,jsx,ts,tsx,vue}"],
     options: {
       safelist: [],
       blocklist: [/^debug-/],
       keyframes: false,
       fontFace: true,
-    }
+    },
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      screens: {
-        xs: '380px'
-      },
-      colors: {
-        color1: '#3C3E42',
-        color2: '#423C3C',
-        color3: '#DC5953',
-        'color3-60': '#DC595399',
-        color4: '#FD6F31',
-      },
-      backgroundImage: {
-        'gradient-1': 'linear-gradient(265.78deg, #DC5953 6.89%, #FD6F31 95.01%)',
-        'gradient-1-to-transparent': 'linear-gradient(265.78deg, #DC5953 6.89%, #FD6F31 30%, #FFF0 65%)',
-        'gradient-2': 'linear-gradient(180deg, rgba(220, 89, 83, 0.06) 0%, rgba(74, 17, 15, 0.24) 100%)'
-      },
-      fontFamily: {
-        raleway: ['Raleway'],
-        roboto: ['Roboto']
-      },
-      fontSize: {
-        '14': '14px',
-        '16': '16px',
-        '18': '18px',
-        '24': '24px',
-        '28': '28px',
-        '36': '36px',
-        '44': '44px',
-        '54': '54px',
-        '60': '60px',
-        '70': '70px',
-        '144': '144px',
-        '350': '350px',
+      textColor: {
+        mainColor: "#001A49",
+        accent: "#C50EFF",
       },
       zIndex: {
-        '-1': '-1',
-      },
-      borderWidth: {
-        '1': '1px',
-        '20': '20px',
-      },
-      scale: {
-        '25': '.25',
-        '40': '.4',
+        "-1": "-1",
       },
       rotate: {
-        '135': '135deg',
-        '-135': '-135deg',
+        135: "135deg",
+        "-135": "-135deg",
+      },
+      color: {
+        accent: "#C50EFF",
+        1: "#001A49",
+        2: "#0EB500",
+      },
+      borderRadius: {
+        main: "20px",
+        "main-2": "33px",
+      },
+      backgroundImage: {
+        "gradient-1":
+          "linear-gradient(44.11deg, #CD10FF 15.75%, #9F06FF 84.63%)",
+        "gradient-2":
+          "linear-gradient(63.5deg, #001A4925 13.21%, #AF0AFF25 42.41%, #FFFFFF25 79.95%)",
+        "gradient-2-reverse":
+          "linear-gradient(63.5deg, #FFFFFF25 13.21%, #AF0AFF25 42.41%, #001A4925 79.95%)",
+        "gradient-3":
+          "linear-gradient(44.11deg, #CD10FF25 15.75%, #9F06FF25 84.63%)",
+        "gradient-4":
+          "linear-gradient(63.5deg, #001A4925 17.96%, #AF0AFF25 83.37%);",
+        "gradient-4-reverse":
+          "linear-gradient(63.5deg, #AF0AFF25 17.96%, #001A4925 83.37%);",
+        "gradient-5":
+          "linear-gradient(44.11deg, #CD10FF0C 15.75%, #9F06FF0C 84.63%)",
       },
       boxShadow: {
-        '1': '4px 4px 20px 1px rgba(124, 40, 36, 0.1)',
+        "1-inner":
+          "0px -1px 12px rgba(0, 0, 0, 0.25), inset 0px -3px 2px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+        2: "0px 3px 44px #818A8C",
+        3: "0px 32px 44px #818A8C",
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/aspect-ratio")],
+};

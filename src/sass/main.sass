@@ -10,12 +10,21 @@ html, body
 html
   scroll-behavior: smooth
   body
-    @apply min-h-screen flex flex-col text-16 lg_text-18 font-medium font-raleway text-color1
+    @apply min-h-screen flex flex-col text-mainColor
     main
       @apply flex-grow
+      h1
+        @apply text-3xl font-extrabold mb-3
+      h2
+        @apply text-2xl font-extrabold mb-2
+      h3
+        @apply text-lg font-extrabold mb-2
 
 .stop-scrolling
   @apply h-full overflow-hidden
+
+.accent
+  @apply text-accent
 
 @import parts/header
 @import parts/footer

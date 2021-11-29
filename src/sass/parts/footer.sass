@@ -1,1 +1,24 @@
-
+footer#footer
+  @apply grid grid-cols-6 mx-3 mb-3 w-full max-w-screen-2xl px-24 mx-auto
+  .title
+    @apply col-span-4 text-3xl font-extrabold mb-6
+    @screen lg
+      @apply col-span-6 row-start-1 row-end-2
+  .terms
+    @apply col-span-4 mb-4 text-sm
+    @screen lg
+      @apply col-span-2 row-start-2 row-end-3
+    .link
+      @apply mb-3
+  .instagram
+    @apply col-start-5 col-span-2 row-start-1 row-span-2 flex justify-center
+    @screen lg
+      @apply col-start-5 col-end-7 row-start-2 row-end-3
+    .link
+      @apply m-auto
+  .requisites
+    @apply col-span-6 text-center mb-3
+    @screen lg
+      @apply col-span-2 text-left
+  .copyright
+    @apply col-span-6 text-center

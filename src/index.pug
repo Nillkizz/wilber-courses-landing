@@ -1,63 +1,53 @@
 extends parts/layouts/default.pug
-
 block variables
-    - var TITLE = 'Холст на заказ'
+    - var TITLE = 'Взлом Wildberries — Заставь алгоритмы маркетплейса продвигать твой товар'
 
 block content
-  h1 В #[span.accent ТОП] на Wildberries
+  include _data.pug
 
-  section
-    .title
-      h2 Заставь алгоритмы маркетплейса продвигать свой товар
+  section#first
     .wrapper
-      p.desc Авторский практикум по выходу на WB и дальнейшему развитию бизнеса от Владимира Лопасова 
-      +image('1.svg')
-      .text 
-        +image('gift.svg')
-        span Доступ к сервису аналитики на 1 месяц
-      a.button Хочу научиться
+      h1.text-3xl.lg_text-5xl.2xl_text-6xl В #[span.accent ТОП] на Wildberries
+      .title
+        h2.text-xl.lg_text-2xl Заставь алгоритмы маркетплейса продвигать свой товар
+      .content
+        p.desc Авторский практикум по выходу на WB и дальнейшему развитию бизнеса от Владимира Лопасова 
+        +image('1.svg').img
+        .text
+          +image('gift.svg')
+          span.accent Доступ к сервису аналитики на 1 месяц
+        a(href="#").button-1 Хочу научиться
+    +image('lopasov.png').lopasov-img
 
-  section
+  section#video
     .wrapper
       .video
-      h2 За 3 минуты рассказываю чем мой подход к построению бизнеса #[span.accent отличается от других]
+        iframe( 
+            allowfullscreen="1" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="YouTube video player"
+            src="https://www.youtube.com/embed/XHOmBV4js_E?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.lopasow.ru&amp;widgetid=1"
+            width="600"
+            height="360"
+            frameborder="0"
+          )
+      h2 #[span За 3 минуты рассказываю] #[span чем мой подход к] #[span построению бизнеса] #[span.accent отличается от других]
   
-  section
-    .title
-      h2 Автор практикума #[span.accent Владимир Лопасов]
+  section#author
     .wrapper
-      ul
-        - 
-          var facts = [
-            "Владелец 3 брендов с оборотом более 3 500 000 рублей",
-            "Продал более 7300 товаров с наценкой 300%",
-            "За 2 недели вывел товар в ТОП по просьбе подписчиков",
-            "Эксперт по закупкам и поиску высокомаржинального товара",
-            "Автор методики «В ТОП на WB» о которой вы скоро узнаете"
-          ]
+      .title
+        h2 Автор практикума #[span.accent Владимир&nbsp;Лопасов]
+      ul.facts
         each fact in facts
-          li #[+image('circle.svg')] !{fact}
-  section
+          li.fact #[+image('circle.svg').icon] !{fact}
+    +image('1.svg').img
+
+
+  section#for-whom
     .title
-      h2 #[span.accent Для кого] я создал этот практикум:
+      h2 #[span.accent Для кого] я создал этот&nbsp;практикум:
     .wrapper
       .advantages 
-        - 
-          var advantages = [
-            { 
-              title: "Для тех, кто хочет уйти из найма", 
-              desc: `<p>И начать работать на себя! За 30 дней вы изучите принципы работы маркетплейса. Научитесь находить товары по выгодным ценам и продавать их в 2-3 и более раз дороже. </p> 
-              <p>Поймете, как заработать столько же, сколько зарабатывали в найме, но при этом работая на себя несколько часов в неделю и это только начало! А дальше рост и масштабирование! И да, совмещать работу в найме и WB на старте можно ;)</p>`
-            },
-            { 
-              title: "Для действующих поставщиков WB", 
-              desc: `<p>Я консультирую поставщиков, которые работают на Wildberries и даже не знают элементарных правил продвижения товара. А всё из-за того, что «глаз замыливается» и люди работают по старинке имея средние результаты. В процессе обучения вы узнаете самые свежие и рабочие фишки по продвижению товара, а также Вы будите получать новую информацию в нашем закрытом сообществе, которая только появляется на рынке. В результате Вы увеличите свою прибыль даже с учётом постоянных скидок.</p>`
-            },
-            { 
-              title: "Для владельцев оффлайн бизнеса", 
-              desc: `Давно хотели выйти в онлайн? Сейчас самое время! Wildberries это огромный канал сбыта Вашей продукции. Рынок электронной коммерции в России сейчас занимает менее 5% процентов ипостоянно растёт (прогноз роста до 60% как у Amazon США). Это антикризисный рынок, в то время,когда оффлайн-магазины закрывались в пандемию, Wildberries ставил рекорды по продажам и почислу новых клиентов. Вы ещё не на WB? Тогда смело вливайтесь в нашу команду предпринимателей!`
-            },
-          ]
         each adv in advantages
           .card 
             .title
@@ -65,16 +55,119 @@ block content
               h3!= adv.title
             .desc!= adv.desc
 
-  section
-    +image('2.svg')
-    .title
-      h2 «Если Вашего #[span.accent бизнеса нет в онлайне], то у Вас нет бизнеса»
+  section#phrase
+    .img
+      +image('2.svg')
     .wrapper
-      p Сейчас эта фраза актуальна как никогда!
+      .title
+        h2 «Если Вашего #[span.accent бизнеса нет в онлайне], то у Вас нет бизнеса»
+      p.text Сейчас эта фраза актуальна #[br] как никогда!
   
-  section
+  section#reviews
     .title
-      h2 #[span.accent Отзывы] о моей работе
+      h2 #[span.accent Отзывы] о моей#[br.lg_hidden] работе
     .wrapper
-      p Сейчас эта фраза актуальна как никогда!
+      .reviews.swiper
+        .swiper-wrapper
+          each rev in reviews 
+            .swiper-slide.review
+              +image(rev.img)
+        .swiper-button-next
+          +image('circle-arrow.svg')
+        .swiper-button-prev
+          +image('circle-arrow.svg')
   
+
+  section#education
+    .title
+      h2 В процессе #[span.accent обучения] #[br.lg_hidden] вы:
+    .wrapper
+      ul.abilities
+        each ability in abilities
+          li.ability
+            +image('plus.svg').img
+            p.text!= ability
+
+  section#awaits
+    .title
+      h2 Что Вас #[span.accent ждёт]?
+    .wrapper
+      ul.awaits
+        each aw in awaits
+          li.await
+            .text
+              h3!= aw.title
+              p!= aw.text
+            +image(aw.img).img
+
+  section#workshop 
+    .wrapper
+      .head
+        .text
+          .title
+            h2 Программа #[br.lg_hidden]#[span.accent практикума]
+          p.desc Обучение будет постоянно обновляется как только появляются новые фишки на рынке маркетплейсов!
+        +image('programm.svg').img
+      .accordeon(data-tsi-accordeon state-on-parent)
+        each m, key in modules
+          .module
+            .heading(data-tsi-toggle="collapse", data-tsi-target=`.content.module-${key}`)
+              .text 
+                h3!=m.title
+                .desc!=m.desc
+              .icon 
+                +image('chevron.svg')
+            .content(class=`module-${key}`, class=(key == 0 ? 'show' : '') )
+              .collapse-body!=m.content
+  
+  section#tariffs
+    .title 
+      h2 Тарифы
+    .wrapper 
+      each t in tariffs.units 
+        .tarif 
+          .info
+            .title
+              h3!= t.title
+              .places.accent!= t.places
+            .price 
+              .val!= t.price.val + ' ₽'
+              if t.price.old
+                .old.accent!= t.price.old + ' ₽'
+            .buy
+              .full
+                .title За полную стоимость
+                a(href=t.links.buy).button-1 Купить
+              if t.price.prepay
+                .prepay
+                  .title!= 'Предоплата ' + t.price.prepay + ' ₽'
+                  a(href=t.links.prepay).button-1 Оплатить
+          ul.advantages
+            for adv, key in tariffs.advantages
+              li.adv
+                +image('ok.svg').icon(class=!t.advs[key] ? 'hidden' : '' )
+                +image('cross.svg').icon(class=t.advs[key] ? 'hidden' : '' )
+                .text!= adv
+
+  section#tinkoff
+    +image('tinkoff.png').mb-3.sm_hidden
+    .title
+      h2 #[span.accent Рассрочка] от #[br.sm_hidden] АО "Тинькоф Банк"
+    .wrapper
+      .text
+        p Приобрести обучение в рассрочку могут все граждане рф. Для этого не обязательно быть клиентом Тинькофф банк.
+        p рассрочка без первого взноса, без#[br] процентов и без переплаты
+        p.accent Рассрочка доступна на&nbsp;4,&nbsp;6&nbsp;и&nbsp;12 месяцев
+      +image('tinkoff.png').img.hidden.sm_block
+
+  section#faq
+    .title
+      h2 Часто задаваемые #[br.lg_hidden] #[span.accent вопросы]:
+    .wrapper
+      .questions
+        each q in questions 
+          .quest 
+            +image('question.svg').icon
+            .text
+              h3.question!= q.question
+              .answer!= q.answer
