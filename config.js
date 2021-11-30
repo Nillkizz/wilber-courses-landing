@@ -11,7 +11,11 @@ const path = {
     assets: `${distFolder}/assets/`,
   },
   src: {
-    pug: [`${srcFolder}/**/*.pug`, `!${srcFolder}/parts/**/*.pug`],
+    pug: [
+      `${srcFolder}/**/*.pug`,
+      `!${srcFolder}/parts/**/*.pug`,
+      `!${srcFolder}/**/_*.pug`,
+    ],
     sass: `${srcFolder}/sass/main.sass`,
     js: `${srcFolder}/js/main.js`,
     assets: `${srcFolder}/assets/**/*`,

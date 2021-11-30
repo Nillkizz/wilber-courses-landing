@@ -29,6 +29,9 @@ module.exports = {
         1: "#001A49",
         2: "#0EB500",
       },
+      borderColor: {
+        mainColor: "#001A49",
+      },
       borderRadius: {
         main: "20px",
         "main-2": "33px",

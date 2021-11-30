@@ -256,12 +256,24 @@ body
           *
             @apply pointer-events-none
           .text
+            @screen lg
+              @apply flex gap-8
             h3
               @apply mb-0 font-bold
+              @screen lg
+                @apply my-auto relative
+                &::after
+                  content: ''
+                  @apply border border-r border-mainColor absolute -right-4 h-7
             .desc
               @apply font-semibold text-sm leading-3
+              @screen lg
+                @apply my-auto leading-7 text-lg
           .icon
             @apply flex-shrink-0 my-auto transition-all duration-700
+        .collapse-body
+          @screen lg
+            @apply pl-28
 
 #tariffs
   @apply mx-3
@@ -274,11 +286,11 @@ body
     .tarif
       @apply bg-gradient-2 py-8 px-3 rounded-main-2 mb-8
       @screen lg
-        @apply flex flex-row-reverse justify-between px-12 mb-0
+        @apply flex flex-row-reverse justify-between px-12 mb-0 gap-8
         &:nth-child(2n)
           @apply flex-row bg-gradient-2-reverse
           .advantages .adv
-            @apply flex-row-reverse
+            @apply flex-row-reverse text-right
       .info
         &>.title, &>.price, &>.buy
           @apply text-center
