@@ -1,6 +1,6 @@
 extends parts/layouts/default.pug
 block variables
-    - var TITLE = 'Взлом Wildberries — Заставь алгоритмы маркетплейса продвигать твой товар'
+  - var TITLE = 'Взлом Wildberries — Заставь алгоритмы маркетплейса продвигать твой товар'
 
 block content
   include _data.pug
@@ -12,7 +12,7 @@ block content
         h2.text-xl.lg_text-2xl Заставь алгоритмы маркетплейса продвигать свой товар
       .content
         p.desc Авторский практикум по выходу на WB и дальнейшему развитию бизнеса от Владимира Лопасова 
-        +image('1.svg').img
+        +image('lopasov.png').img
         .text
           +image('gift.svg')
           span.accent Доступ к сервису аналитики на 1 месяц
@@ -23,16 +23,16 @@ block content
     .wrapper
       .video
         iframe( 
-            allowfullscreen="1" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            title="YouTube video player"
-            src="https://www.youtube.com/embed/XHOmBV4js_E?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.lopasow.ru&amp;widgetid=1"
-            width="600"
-            height="360"
-            frameborder="0"
+          allowfullscreen="1" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          title="YouTube video player"
+          src="https://www.youtube.com/embed/7bp1vF1HaXo"
+          width="600"
+          height="360"
+          frameborder="0"
           )
       h2 #[span За 3 минуты рассказываю] #[span чем мой подход к] #[span построению бизнеса] #[span.accent отличается от других]
-  
+
   section#author
     .wrapper
       .title
@@ -62,7 +62,7 @@ block content
       .title
         h2 «Если Вашего #[span.accent бизнеса нет в онлайне], то у Вас нет бизнеса»
       p.text Сейчас эта фраза актуальна #[br] как никогда!
-  
+
   section#reviews
     .title
       h2 #[span.accent Отзывы] о моей#[br.lg_hidden] работе
@@ -76,7 +76,7 @@ block content
           +image('circle-arrow.svg')
         .swiper-button-prev
           +image('circle-arrow.svg')
-  
+
 
   section#education
     .title
@@ -119,7 +119,7 @@ block content
                 +image('chevron.svg')
             .content(class=`module-${key}`, class=(key == 0 ? 'show' : '') )
               .collapse-body!=m.content
-  
+
   section#tariffs
     .title 
       h2 Тарифы
